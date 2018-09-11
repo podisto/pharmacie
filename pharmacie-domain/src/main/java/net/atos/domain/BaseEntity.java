@@ -23,8 +23,8 @@ import lombok.Data;
  *
  */
 @MappedSuperclass
-@Data
 @EntityListeners(AuditingEntityListener.class)
+@Data
 public abstract class BaseEntity implements Serializable {
 
 	/**

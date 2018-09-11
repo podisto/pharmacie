@@ -14,7 +14,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @SpringBootApplication
 @EnableJpaAuditing
-@EnableJpaRepositories
+@EnableJpaRepositories(basePackages = {"net.atos"})
 @ComponentScan(basePackages = {"net.atos"})
 @EntityScan(basePackages = {"net.atos"})
 public class PharmacieApplication {

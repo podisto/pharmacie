@@ -5,12 +5,17 @@ package net.atos.domain;
 
 import javax.persistence.*;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 /**
  * @author A707592
  *
  */
 @Entity
 @Table(name = "departement")
+@Data
+@EqualsAndHashCode(callSuper=false)
 public class Departement extends BaseEntity {
 	
 	/**
