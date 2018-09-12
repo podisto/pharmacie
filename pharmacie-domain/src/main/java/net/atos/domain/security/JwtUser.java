@@ -4,7 +4,6 @@
 package net.atos.domain.security;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,10 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  *
  */
 public class JwtUser implements UserDetails {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private final Integer id;
     private final String username;
@@ -29,28 +25,25 @@ public class JwtUser implements UserDetails {
     private final String email;
     private final Collection<? extends GrantedAuthority> authorities;
     private final boolean enabled;
-    private final Date lastPasswordResetDate;
-
+    
     public JwtUser(
-          Integer id,
-          String username,
-          String firstname,
-          String lastname,
-          String email,
-          String password, Collection<? extends GrantedAuthority> authorities,
-          boolean enabled,
-          Date lastPasswordResetDate
-    ) {
-        this.id = id;
-        this.username = username;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.password = password;
-        this.authorities = authorities;
-        this.enabled = enabled;
-        this.lastPasswordResetDate = lastPasswordResetDate;
-    }
+    		Integer id,
+            String username,
+            String firstname,
+            String lastname,
+            String email,
+            String password, Collection<? extends GrantedAuthority> authorities,
+            boolean enabled
+      ) {
+          this.id = id;
+          this.username = username;
+          this.firstname = firstname;
+          this.lastname = lastname;
+          this.email = email;
+          this.password = password;
+          this.authorities = authorities;
+          this.enabled = enabled;
+      }
 
     @JsonIgnore
     public Integer getId() {
@@ -106,10 +99,5 @@ public class JwtUser implements UserDetails {
     @Override
     public boolean isEnabled() {
         return enabled;
-    }
-
-    @JsonIgnore
-    public Date getLastPasswordResetDate() {
-        return lastPasswordResetDate;
     }
 }

@@ -36,7 +36,7 @@ public class Authority implements Serializable {
 	@Id
     @Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     @Column(name = "NAME", length = 50)
     @NotNull

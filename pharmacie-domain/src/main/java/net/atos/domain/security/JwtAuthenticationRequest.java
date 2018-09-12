@@ -5,23 +5,27 @@ package net.atos.domain.security;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @author A707592
  *
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class JwtAuthenticationRequest implements Serializable {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+
+	@NotBlank
+	@Size(min = 3, message = "username should be at least 5 characters")
 	private String username;
-    private String password;
+	
+	@NotBlank
+	@Size(min = 5, message = "password should be at least 5 characters")
+	private String password;
 }

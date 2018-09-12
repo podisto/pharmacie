@@ -6,6 +6,8 @@ package net.atos.controllers;
 import java.net.URI;
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,8 +23,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import lombok.Getter;
 import net.atos.domain.BaseEntity;
 
@@ -30,11 +30,12 @@ import net.atos.domain.BaseEntity;
  * @author A707592
  *
  */
-@ApiResponses(value = { @ApiResponse(code = 200, message = "success"),
+/*@ApiResponses(value = { @ApiResponse(code = 200, message = "success"),
 		@ApiResponse(code = 201, message = "resource created"), @ApiResponse(code = 400, message = "bad request"),
 		@ApiResponse(code = 401, message = "unauthorized"),
 		@ApiResponse(code = 403, message = "access denied, not granted to access this resource"),
-		@ApiResponse(code = 404, message = "resource not found"), @ApiResponse(code = 500, message = "error server") })
+		@ApiResponse(code = 404, message = "resource not found"), @ApiResponse(code = 500, message = "error server") })*/
+@RolesAllowed({"ROLE_ADMIN", "ROLE_SUPER_ADMIN"})
 public abstract class GenericController<T extends BaseEntity> {
 
 	@Getter
