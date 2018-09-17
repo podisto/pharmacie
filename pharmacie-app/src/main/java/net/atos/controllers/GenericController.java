@@ -9,9 +9,9 @@ import java.util.List;
 import javax.annotation.security.RolesAllowed;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import io.swagger.annotations.ApiOperation;
-import lombok.Getter;
 import net.atos.domain.BaseEntity;
+import net.atos.repositories.BaseDAO;
 
 /**
  * @author A707592
@@ -38,12 +38,8 @@ import net.atos.domain.BaseEntity;
 @RolesAllowed({"ROLE_ADMIN", "ROLE_SUPER_ADMIN"})
 public abstract class GenericController<T extends BaseEntity> {
 
-	@Getter
-	private final JpaRepository<T, Integer> dao;
-
-	public GenericController(JpaRepository<T, Integer> dao) {
-		this.dao = dao;
-	}
+	@Autowired
+	private BaseDAO<T> dao;
 
 	@GetMapping("/all")
 	@ApiOperation("get all entities")
@@ -69,7 +65,7 @@ public abstract class GenericController<T extends BaseEntity> {
 	public ResponseEntity<T> create(@RequestBody T entity) {
 		T created = dao.save(entity);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(created.getId()).toUri();
-		return ResponseEntity.created(location).build();
+		return ResponseEntity.created(location).body(created);
 	}
 
 	@PutMapping("/{id}")

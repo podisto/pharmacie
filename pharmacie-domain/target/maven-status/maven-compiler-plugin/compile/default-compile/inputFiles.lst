@@ -1,0 +1,16 @@
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/Categorie.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/security/JwtAuthenticationRequest.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/request/CategorieRequest.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/security/Authority.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/security/AuthorityName.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/security/User.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/security/SignUpRequest.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/response/UploadFileResponse.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/Departement.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/DBFile.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/security/JwtUserFactory.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/security/JwtAuthenticationResponse.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/security/JwtUser.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/Region.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/BaseEntity.java
+/Users/podisto/simdev/pharmacie/pharmacie-domain/src/main/java/net/atos/domain/Pharmacie.java

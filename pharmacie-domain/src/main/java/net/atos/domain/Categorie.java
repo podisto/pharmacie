@@ -3,8 +3,6 @@
  */
 package net.atos.domain;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author A707592
@@ -23,7 +22,8 @@ import lombok.Data;
 @Entity
 @Table(name = "categorie")
 @Data
-public class Categorie implements Serializable {
+@EqualsAndHashCode(callSuper=false)
+public class Categorie extends BaseEntity {
 	
 	private static final long serialVersionUID = 1L;
 

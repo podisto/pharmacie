@@ -3,7 +3,6 @@
  */
 package net.atos.controllers;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,12 +17,4 @@ import net.atos.domain.Region;
 @RequestMapping("/regions")
 @Api(value = "regions", tags = {"Parametrages"})
 public class RegionController extends GenericController<Region> {
-
-	/**
-	 * @param dao
-	 */
-	public RegionController(JpaRepository<Region, Integer> dao) {
-		super(dao);
-	}
-
 }

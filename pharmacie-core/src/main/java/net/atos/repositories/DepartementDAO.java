@@ -3,7 +3,6 @@
  */
 package net.atos.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import net.atos.domain.Departement;
@@ -13,6 +12,6 @@ import net.atos.domain.Departement;
  *
  */
 @Repository
-public interface DepartementDAO extends JpaRepository<Departement, Integer> {
+public interface DepartementDAO extends BaseDAO<Departement> {
 
 }
