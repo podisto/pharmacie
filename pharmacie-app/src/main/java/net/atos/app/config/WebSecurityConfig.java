@@ -6,7 +6,6 @@ package net.atos.app.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -103,6 +102,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // allow anonymous resource requests
                 .antMatchers(AUTH_WHITE_LIST).permitAll()
                 .antMatchers("/users/auth/**").permitAll()
+                .antMatchers("/categories/**").permitAll()
                 .anyRequest().authenticated();
 
         // Custom JWT based security filter
